@@ -66,7 +66,7 @@ class UsersController extends Controller {
 
             $entity = new User();
             $form = $this->createForm(new UserType(), $entity);
-            $form->bind($request);
+            $form->submit($request);
 
             if($form->isValid()){
                 $em = $this->getDoctrine()->getManager();
