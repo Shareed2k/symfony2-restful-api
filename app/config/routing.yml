@@ -1,0 +1,15 @@
+screenfony_demo:
+    resource: "@ScreenfonyDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+
+users:
+    type:   rest
+    resource:   Screenfony\DemoBundle\Controller\UsersController
+
+screenfony_demo_users_create:
+    pattern:    /user
+    defaults: { _controller: ScreenfonyDemoBundle:Users:postCreateUser, _format: ~ }
+    requirements:
+        _method: POST
